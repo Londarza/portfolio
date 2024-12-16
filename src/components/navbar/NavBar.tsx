@@ -3,10 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-
+import { usePathname } from "next/navigation"
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const pathname = usePathname()
+  if (pathname === "/") {
+    return null;
+  }
   return (
     <nav className="bg-gray-900 text-white py-4">
       <div className="container mx-auto flex items-center justify-between px-6">
