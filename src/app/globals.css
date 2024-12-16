@@ -3,8 +3,417 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary-color: #00FF88; /* Verde Neón */
+    --secondary-color: #007FFF; /* Azul Eléctrico */
+    --accent-color: #FF6F3C; /* Naranja Brillante */
+    --text-light: #ededed;
+    --text-dark: #171717;
+}
+
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.landing__button-explorar {
+  padding: 1rem 2rem; /* Tamaño del botón */
+  background-color: #FF6B00; /* Naranja */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  transition: all 0.3s ease-in-out; /* Transición para efectos de hover */
+  transform: scale(1); /* Tamaño inicial */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.landing__button-explorar:hover {
+  background-color: #FF6B00; /* Mismo color de fondo para hover */
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+}
+
+/* Clase para el main */
+.landing-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #1f1f1f, #2d2d2d, #1f1f1f);
+  color: white;
+}
+
+/* Clase para la sección hero */
+.landing-hero {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  space-between: 2rem; /* Adds vertical spacing between elements */
+}
+
+
+
+/* Fondo animado radial */
+.background-radial {
+  background: radial-gradient(circle, #1E40AF, transparent);
+  opacity: 0.2;
+  animation: pulse 2s infinite;
+}
+
+/* Fondo animado lineal */
+.background-linear {
+  background: linear-gradient(to right, #00A7FF, #00FF88);
+  opacity: 0.4;
+  animation: pulse 2s infinite;
+}
+
+/* Animación de pulsado */
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* Clase para la estructura del contenido */
+.content-container {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+.space-y-8 {
+  margin-bottom: 2rem;
+}
+
+
+/* Título principal */
+.main-title {
+  font-size: 3rem; /* 5xl */
+  font-weight: bold;
+  animation: fadeInUp 1s;
+  animation-delay: 1s;
+}
+
+
+.highlighted-text {
+  color: #00FF88;
+}
+
+/* Descripción */
+.description {
+  font-size: 1.25rem; /* xl */
+  color: #d1d5db; /* gray-300 */
+  animation: fadeInUp 1s;
+  animation-delay: 2s;
+}
+
+/* Botones de CV */
+.cv-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cv-button {
+  padding: 1rem 2rem;
+  background-color: #00A7FF;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.cv-button:hover {
+  background-color: #0096cc;
+  transform: scale(1.05);
+}
+
+/* Botón explorar portfolio */
+.explore-button-container {
+  margin-top: 2.5rem;
+}
+
+.explore-button {
+  padding: 1rem 2.5rem;
+  background-color: #00A7FF;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: scale(1);
+}
+
+.explore-button:hover {
+  background-color: #0096cc;
+  transform: scale(1.05);
+}
+
+
+.proyectos-main {
+  min-height: 100vh;
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* Estilos para la sección de cabecera */
+.proyectos-header {
+  padding: 4rem 0;
+}
+
+.proyectos-header h1 {
+  font-size: 3rem; /* 4xl */
+  font-weight: bold;
+  animation: fadeInUp 1s;
+  animation-delay: 1s;
+}
+
+/* Estilos para cada tarjeta de proyecto */
+.proyecto-card {
+  background-color: #2d2d2d;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+  margin: 16px;
+}
+
+.proyecto-card:hover {
+  transform: scale(1.05);
+}
+
+/* Título del proyecto */
+.proyecto-titulo {
+  background-color: #3f3f3f;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Contenido del proyecto */
+.proyecto-contenido {
+  padding: 1.5rem;
+  space-between: 1rem;
+}
+
+.proyecto-tecnologias {
+  color: #d1d5db; /* gray-300 */
+}
+
+.proyecto-tecnologias span {
+  font-weight: 600;
+}
+
+/* Carrusel de imágenes (placeholder por ahora) */
+.proyecto-carrousel .carrousel-placeholder {
+  background-color: #4b5563; /* gray-600 */
+  border-radius: 0.375rem;
+  height: 16rem;
+  margin-bottom: 1rem;
+}
+
+/* Enlaces de video y deploy */
+.proyecto-enlaces a {
+  display: block;
+  font-size: 1rem;
+  color: #00A7FF;
+  transition: color 0.3s;
+}
+
+.proyecto-enlaces a:hover {
+  color: #00FF88;
+}
+
+/* Animación de fade-in para el texto */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9fafb; /* Fondo más claro */
+  border-radius: 16px; /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Sombra sutil para profundidad */
+  border: 1px solid #e5e7eb; /* Borde sutil para separar visualmente */
+}
+
+.cv-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cv-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.cv-info {
+  text-align: center;
+}
+
+.cv-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.cv-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.cv-contact {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.cv-link {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+.cv-link:hover {
+  text-decoration: underline;
+}
+
+.cv-section {
+  margin-bottom: 2rem;
+}
+
+.cv-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.cv-section-content {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.cv-project, .cv-job, .cv-education {
+  margin-bottom: 1.5rem;
+}
+
+.cv-project-title, .cv-job-title, .cv-education-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.cv-project-role, .cv-job-role, .cv-education-content {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.cv-project-description, .cv-job-list {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.cv-project-list {
+  margin-left: 1.5rem;
+}
+
+.cv-project-link {
+  margin-top: 0.5rem;
+}
+
+.cv-skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cv-skills-list li {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.cv-language {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+
+/* Animación para el fade-in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .proyectos-list {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .space-y-10 {
+    margin-bottom: 2.5rem;
+  }
+  .main-title {
+    font-size: 4.5rem; /* 7xl */
+  }
+  .landing-hero {
+    space-between: 3rem; /* Increases spacing on larger screens */
+  }
+  .proyectos-header h1 {
+    font-size: 4rem; /* 5xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .proyectos-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .proyectos-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,10 +421,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
