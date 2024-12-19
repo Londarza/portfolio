@@ -1,6 +1,16 @@
 "use client";
 
+import Carrousel from "@/components/carrousel/Carrousel";
+import { useState, useEffect } from "react";
+import ReactPlayer from "react-player";
+
 const Proyectos: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Esto asegura que el componente se renderice solo en el cliente
+  }, []);
+
   return (
     <main className="proyectos-main min-h-screen bg-gray-900 text-white">
       {/* Título de la sección */}
@@ -15,27 +25,39 @@ const Proyectos: React.FC = () => {
         {/* Proyecto 1 */}
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
-            Proyecto 1
+            ForgeFit
           </h2>
           <div className="proyecto-contenido p-6 space-y-4">
             <div className="proyecto-tecnologias text-gray-300">
-              <span className="font-semibold">Tecnologías:</span> React, Next.js, Tailwind CSS, TypeScript, NextAuth
+              <span className="font-semibold">Tecnologías:</span> React, Next.js, Tailwind CSS, TypeScript, NextAuth, LandBot, maptiler, Stripe, sweetAlert 2
+              <span>Proyecto grupal, donde creamos una app para gimnacios donde integramos todas las necesidades del mismo, donde los usuarios pueden registrarse, logearse con credenciales propias y de terceros, pagar las membresias desde una plataforma de pagos real, ver las clases y profesores filtrando por categorias, se pueden suscribir a clases, contactar con el Admin de la pagina, interactuar con un chatbot, ver la ubicacion del gimnacio. Los profesores pueden crear clases, editarlas y ver todos sus alumnos. La app cuenta con un dashboard de administrador completo contando con CRUD de usuarios, clases, categorias y suscripciones</span>
             </div>
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
                 {/* Aquí se incluiría el carrusel de imágenes */}
+                <Carrousel/>
               </div>
             </div>
             <div className="proyecto-enlaces space-y-2">
               <a
-                href="#"
+                href="https://vimeo.com/1037638264?share=copy"
                 target="_blank"
                 className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
               >
                 Video del proyecto
               </a>
+              {/* ReactPlayer renderizado solo en el cliente */}
+              {isClient && (
+                <ReactPlayer
+                  url="https://vimeo.com/1037638264?share=copy"
+                  width="100%"
+                  height="200px"
+                  controls
+                  className="rounded-md overflow-hidden"
+                />
+              )}
               <a
-                href="#"
+                href="https://pf-webgym-qv6r.vercel.app/"
                 target="_blank"
                 className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
               >
@@ -48,15 +70,16 @@ const Proyectos: React.FC = () => {
         {/* Proyecto 2 */}
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
-            Proyecto 2
+            HipTek
           </h2>
           <div className="proyecto-contenido p-6 space-y-4">
             <div className="proyecto-tecnologias text-gray-300">
-              <span className="font-semibold">Tecnologías:</span> React, Next.js, Tailwind CSS, TypeScript, Context, Redux
+              <span className="font-semibold">Tecnologías:</span> React, Next.js, Tailwind CSS, TypeScript, Context, js-cookie
+              <span>Se creó un Ecommerce de ciclo completo, donde el usuario puede navegar, registrarse, logearse, ver detalles de los productos, agregar y quitar del carrito, efectuar la compra y ver su historial de compras exitosas y rechazadas</span>
             </div>
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
-                {/* Aquí se incluiría el carrusel de imágenes */}
+                
               </div>
             </div>
             <div className="proyecto-enlaces space-y-2">
@@ -67,13 +90,7 @@ const Proyectos: React.FC = () => {
               >
                 Video del proyecto
               </a>
-              <a
-                href="#"
-                target="_blank"
-                className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
-              >
-                Ver Deploy
-              </a>
+             
             </div>
           </div>
         </div>

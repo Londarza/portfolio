@@ -225,11 +225,22 @@ body {
 }
 
 /* Carrusel de imágenes (placeholder por ahora) */
-.proyecto-carrousel .carrousel-placeholder {
+.proyecto-carrousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.carrousel-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #4b5563; /* gray-600 */
   border-radius: 0.375rem;
-  height: 16rem;
+  height: 16rem; /* Mantén esta altura */
   margin-bottom: 1rem;
+  overflow: hidden; /* Oculta contenido que exceda los límites */
 }
 
 /* Enlaces de video y deploy */
@@ -370,6 +381,83 @@ body {
   color: #4a5568;
 }
 
+/* Contenedor del carrusel */
+.carrousel-container {
+  position: relative;
+  width: 100%; /* Ajusta al ancho del contenedor padre */
+  height: 100%; /* Ocupa toda la altura del placeholder */
+  max-width: none; /* Permite que se ajuste dinámicamente */
+  margin: 0 auto;
+  overflow: hidden; /* Oculta contenido que exceda los límites */
+  border-radius: inherit; /* Hereda el radio del contenedor */
+  box-shadow: none; /* Opcional: elimina la sombra */
+  background-color: transparent; /* Transparente para integrarse mejor */
+}
+
+/* Imagenes */
+.carrousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajusta la altura al contenedor */
+}
+
+.carrousel-image {
+  max-width: 100%; /* Limita el ancho al contenedor */
+  max-height: 100%; /* Limita la altura al contenedor */
+  object-fit:contain; /* Asegura que la imagen ocupe el espacio sin deformarse */
+  transition: transform 0.5s ease-in-out; /* Transición suave */
+}
+
+/* Botones de navegación */
+.carrousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10; /* Asegura que se superponga a las imágenes */
+  transition: background-color 0.3s ease;
+}
+
+.carrousel-button-prev {
+  left: 5px; /* Ajuste para evitar que sobresalga */
+}
+
+.carrousel-button-next {
+  right: 5px;
+}
+
+.carrousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Más oscuro al pasar el ratón */
+}
+
+/* Dots (indicadores) */
+.carrousel-dots {
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.carrousel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carrousel-dot.active,
+.carrousel-dot:hover {
+  background-color: #00FF88;
+}
 
 /* Animación para el fade-in */
 @keyframes fadeInUp {
