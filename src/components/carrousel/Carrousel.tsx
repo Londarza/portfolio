@@ -3,19 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const images = [
-  "/forgefit/Sin título.png",
-  "/forgefit/Sin título2.jpg",
-  "/forgefit/Sin título3.jpg",
-  "/forgefit/Sin título4.jpg",
-  "/forgefit/Sin título5.jpg",
-  "/forgefit/Sin título6.jpg",
-  "/forgefit/Sin título7.jpg",
-  "/forgefit/Sin título8.jpg",
-  "/forgefit/Sin título9.jpg",
-];
+interface CarrouselProps {
+  images: string[]; // Recibe un array de strings con las rutas de las imágenes
+}
 
-const Carrousel: React.FC = () => {
+const Carrousel: React.FC<CarrouselProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
