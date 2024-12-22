@@ -167,7 +167,7 @@ const Proyectos: React.FC = () => {
             </div>
             <div className="proyecto-enlaces space-y-2">
               <a
-                href="#"
+                href="https://github.com/Londarza/Hiptek"
                 target="_blank"
                 className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
               >
