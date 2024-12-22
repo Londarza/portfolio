@@ -459,6 +459,137 @@ body {
   background-color: #00FF88;
 }
 
+/* Contenedor principal */
+.sobre-mi-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Encabezado */
+.sobre-mi-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sobre-mi-title {
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #34d399; /* Verde esmeralda */
+}
+
+.sobre-mi-subtitle {
+  font-size: 1.2rem;
+  color: #d1d5db; /* Gris claro */
+  margin-top: 0.5rem;
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sección de contenido */
+.sobre-mi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Secciones individuales */
+.sobre-mi-section {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #1f2937; /* Gris oscuro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+/* Título de sección */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34d399; /* Verde esmeralda */
+  margin-bottom: 1rem;
+}
+
+/* Descripción de sección */
+.section-description {
+  font-size: 1rem;
+  color: #e5e7eb; /* Gris más claro */
+  font-size: 1.25rem; /* text-lg */
+  line-height: 2rem; /* leading-relaxed */
+}
+
+/* Lista de cursos */
+.section-list {
+  list-style: none;
+  padding: 0;
+}
+
+.section-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #374151; /* Borde gris oscuro */
+  color: #f3f4f6; /* Blanco suave */
+}
+
+.section-list li:last-child {
+  border-bottom: none;
+}
+
+/* Hover para lista */
+.section-list li:hover {
+  color: #34d399; /* Verde esmeralda */
+  cursor: pointer;
+}
+/* Estilos generales para los enlaces */
+.section-description a {
+  color: #2563eb; /* Azul intenso similar al de Tailwind (text-blue-600) */
+  text-decoration: underline; /* Subrayado para indicar que es un enlace */
+  font-weight: 500; /* Peso medio para destacar el enlace */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover: cambio de color y subrayado */
+.section-description a:hover {
+  color: #1d4ed8; /* Azul más oscuro al pasar el cursor */
+  text-decoration-color: #1d4ed8; /* Cambia el color del subrayado */
+  text-decoration-thickness: 2px; /* Subrayado más grueso */
+}
+
+/* Focus: resaltado al enfocarse (accesibilidad) */
+.section-description a:focus {
+  outline: 2px solid #1d4ed8; /* Resalta el borde al enfocar */
+  outline-offset: 2px;
+}
+
+/* Activo: color más oscuro al hacer clic */
+.section-description a:active {
+  color: #1e40af; /* Azul aún más oscuro */
+}
+
+/* Visited: color para enlaces ya visitados */
+.section-description a:visited {
+  color: #4f46e5; /* Azul violáceo */
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-mi-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+}
+
 /* Animación para el fade-in */
 @keyframes fadeInUp {
   0% {
