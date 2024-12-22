@@ -36,7 +36,7 @@ const LandingView: React.FC = () => {
               rel="noopener noreferrer"
               className="cv-button px-8 py-4 bg-[#00A7FF] text-white font-semibold rounded-md hover:bg-[#00A7FF] transition-all duration-300 transform hover:scale-105"
             >
-              Descargar CV (EN)
+              Download CV (EN)
             </a>
             <a
               href="/cv%20Lautaro%20Ondarza.pdf"
