@@ -40,7 +40,16 @@ const Cv: React.FC = () => {
               rel="noopener noreferrer"
             >
               GitHub
-            </a>
+            </a>{" "}
+            | 💻{" "}
+            <a
+              href="https://portfolio-23433ac27-londarzas-projects.vercel.app/"
+              className="cv-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfolio
+            </a>{" "}
           </p>
         </div>
       </header>
