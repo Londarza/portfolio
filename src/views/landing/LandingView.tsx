@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import 'animate.css';
+import "animate.css";
 
 const LandingView: React.FC = () => {
   const router = useRouter();
@@ -19,8 +19,7 @@ const LandingView: React.FC = () => {
         <div className="content-container relative z-10 space-y-8 md:space-y-10">
           {/* Título */}
           <h1 className="main-title text-5xl md:text-7xl font-bold animate__animated animate__fadeInUp animate__delay-1s">
-            Hola, soy{" "}
-            <span className="highlighted-text">Lautaro Ondarza</span>
+            Hola, soy <span className="highlighted-text">Lautaro Ondarza</span>
           </h1>
 
           {/* Descripción */}
@@ -32,16 +31,14 @@ const LandingView: React.FC = () => {
           <div className="cv-buttons mt-8 flex flex-col md:flex-row gap-6 justify-center animate__animated animate__fadeInUp animate__delay-3s">
             <a
               href="/cv%20Lautaro%20Ondarza%20(eng).pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Lautaro_Ondarza_CV_English" // Nombre del archivo cuando se descarga
               className="cv-button px-8 py-4 bg-[#00A7FF] text-white font-semibold rounded-md hover:bg-[#00A7FF] transition-all duration-300 transform hover:scale-105"
             >
               Download CV (EN)
             </a>
             <a
               href="/cv%20Lautaro%20Ondarza.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Lautaro_Ondarza_CV_Spanish" // Nombre del archivo cuando se descarga
               className="cv-button px-8 py-4 bg-[#00A7FF] text-white font-semibold rounded-md hover:bg-[#00A7FF] transition-all duration-300 transform hover:scale-105"
             >
               Descargar CV (ES)

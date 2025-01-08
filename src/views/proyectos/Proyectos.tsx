@@ -54,7 +54,7 @@ const Proyectos: React.FC = () => {
       {/* Lista de proyectos */}
       <section className="proyectos-list grid grid-cols-1 gap-12 px-6 sm:px-12 md:grid-cols-2 xl:grid-cols-3">
         {/* Proyecto 1 */}
-        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
+        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             ForgeFit
           </h2>
@@ -130,7 +130,7 @@ const Proyectos: React.FC = () => {
         </div>
 
         {/* Proyecto 2 */}
-        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
+        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             HipTek
           </h2>
@@ -178,7 +178,7 @@ const Proyectos: React.FC = () => {
         </div>
 
         {/* Proyecto 3 */}
-        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300">
+        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             Namaste
           </h2>

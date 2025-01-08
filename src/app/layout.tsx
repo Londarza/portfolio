@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lautaro Ondarza",
   description: "Lautaro Ondarza's portfolio",
+  viewport: "width=device-width, initial-scale=1"
 };
 
 export default function RootLayout({

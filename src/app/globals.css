@@ -197,9 +197,7 @@ body {
   margin: 16px;
 }
 
-.proyecto-card:hover {
-  transform: scale(1.05);
-}
+
 
 /* Título del proyecto */
 .proyecto-titulo {
