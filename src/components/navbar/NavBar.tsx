@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-gray-900 text-white py-4">
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/home">
+        <Link href="/">
           <Image
             src="/Group.png"
             alt="Logo"
