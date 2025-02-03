@@ -21,6 +21,14 @@ const Proyectos: React.FC = () => {
     "/forgefit/Sin título8.jpg",
     "/forgefit/Sin título9.jpg",
   ];
+  const PomodoroImg = [
+    "/Pomodoro/PomodoroNative1.jpg",
+    "/Pomodoro/PomodoroNative2.jpg",
+    "/Pomodoro/PomodoroNative3.jpg",
+    "/Pomodoro/PomodoroNative4.jpg",
+    "/Pomodoro/PomodoroNative5.jpg",
+    
+  ];
   const hiptekImages = [
     "/hiptek/hiptek1.jpg",
     "/hiptek/hiptek1.jpg",
@@ -217,6 +225,65 @@ const Proyectos: React.FC = () => {
             <div className="proyecto-enlaces space-y-2">
               <a
                 href="https://github.com/Londarza/appTurnos"
+                target="_blank"
+                className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
+              >
+                Ver Github
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Proyecto 4*/}
+        <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
+          <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
+            Pomodoro React Native
+          </h2>
+          <div className="proyecto-contenido p-6 space-y-4">
+            <div className="proyecto-tecnologias text-gray-300">
+              <span className="font-semibold">Tecnologías utilizadas:</span>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>React</li>
+                <li>React Native</li>
+                <li>Expo</li>
+                <li>TypeScript</li>
+                <li>Expo-Av</li>
+                
+              </ul>
+            </div>
+            <div className="proyecto-descripcion text-gray-300">
+              <p>
+                Primer proyecto personal con React Native. Se crea una aplicacion Pomodoro, es un contador de tiempos de actividad y dos tipos diferentes de descansos. 25 minutos para la actividad, un descanso corto de 5 minutos y la posibilidad de otro descanso largo de 15 minutos. Se agrego un boton de pantalla completa. Se agregaron sonidos para mejorar la experiencia del usuario, tanto al apretar los botones como al terminar el tiempo. 
+              </p>
+            </div>
+
+            <div className="proyecto-carrousel">
+              <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
+                {/* Aquí se incluiría el carrusel de imágenes */}
+                <Carrousel images={PomodoroImg} />
+              </div>
+            </div>
+            <div className="proyecto-enlaces space-y-2">
+              <a
+                href="https://vimeo.com/1053110341/fdfdbaa32e?share=copy"
+                target="_blank"
+                className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
+              >
+                Video del proyecto
+              </a>
+              {/* ReactPlayer renderizado solo en el cliente */}
+              {isClient && (
+                <ReactPlayer
+                  url="https://vimeo.com/1053110341/fdfdbaa32e?share=copy"
+                  width="100%"
+                  height="200px"
+                  controls
+                  className="rounded-md overflow-hidden"
+                />
+              )}
+             
+              <a
+                href="https://github.com/Londarza/nativeclock"
                 target="_blank"
                 className="text-[#00A7FF] hover:text-[#00FF88] transition-all duration-300"
               >

@@ -59,7 +59,7 @@ const Cv: React.FC = () => {
         <h2 className="cv-section-title">Perfil Profesional</h2>
         <p className="cv-section-content">
           Desarrollador Full Stack con sólida experiencia académica y proyectos grupales. Especializado en el
-          desarrollo Front-End, con habilidades avanzadas en React.js, Next.js, Tailwind CSS, y TypeScript, entre
+          desarrollo Front-End, con habilidades avanzadas en React.js, Next.js, Tailwind CSS, React Native y TypeScript, entre
           otras tecnologías modernas. En constante aprendizaje, completé los bootcamps de Digital House (2023) y Henry
           (2024), adquiriendo un profundo conocimiento del stack MERN y tecnologías relevantes para el mercado actual.
           Destaco en la creación de interfaces de usuario intuitivas, diseño de sistemas escalables y colaboración en
