@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/NavBar";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/containers/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lautaro Ondarza",
   description: "Lautaro Ondarza's portfolio",
-  viewport: "width=device-width, initial-scale=1"
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -26,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
@@ -35,5 +40,7 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+
+    
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-
+//styles
+import './Footer.scss'
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-6">

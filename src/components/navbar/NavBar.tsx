@@ -1,19 +1,48 @@
 "use client"
-import Link from "next/link";
+
+import images from "@/constants/constants";
 import Image from "next/image";
-import { useState } from "react";
-import { FaBars } from "react-icons/fa";
-import { usePathname } from "next/navigation"
+import '@/components/navbar/NavBar.scss'
+
+//import Link from "next/link";
+//import Image from "next/image";
+//import { FaBars } from "react-icons/fa";
+//import { useState } from "react";
+
+
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname()
-  if (pathname === "/") {
-    return null;
-  }
+  //const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
+    <div className="app">
+    <nav className="app__navbar">
+      <div className="app__navbar-logo">
+        <Image src={images.logo} alt="logo" />
+      </div>
+      <ul className="app__navbar-links">
+        {['Home', 'About','Contact', 'Work', 'Skills'].map((item)=>(
+          <li className="app__flex p-text" key={`Link-${item}`}>
+            <div></div>
+            <a href={`/${item}`}> {item}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    </div>
+
+  );
+};
+
+export default Navbar;
+
+
+/*  RETURN VIEJO
+
+return (
     <nav className="bg-gray-900 text-white py-4">
       <div className="container mx-auto flex items-center justify-between px-6">
-        {/* Logo */}
+        {/* Logo *
         <Link href="/">
           <Image
             src="/Group.png"
@@ -24,7 +53,7 @@ const Navbar: React.FC = () => {
           />
         </Link>
 
-        {/* Menú en Desktop */}
+        {/* Menú en Desktop *
         <div className="hidden md:flex space-x-8">
           <Link
             href="/cv"
@@ -46,7 +75,7 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Menú en Móvil */}
+        {/* Menú en Móvil *
         <div className="md:hidden flex items-center">
           <button
             className="text-white hover:text-[#00FF88]"
@@ -57,7 +86,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Menú desplegable en Móvil */}
+      {/* Menú desplegable en Móvil *
       {isMenuOpen && (
         <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-800 py-4">
           <Link
@@ -81,7 +110,6 @@ const Navbar: React.FC = () => {
         </div>
       )}
     </nav>
-  );
-};
+  )
 
-export default Navbar;
+*/
