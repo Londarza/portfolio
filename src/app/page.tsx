@@ -1,10 +1,13 @@
 
-import LandingView from "@/views/landing/LandingView";
+
+import Header from "../containers/Header/Header";
+//import LandingView from "@/views/landing/LandingView";
 
 export default function Home() {
   return (
     <div className="app">
-      <LandingView />
+      <Header />
+      
     </div>
   );
 }

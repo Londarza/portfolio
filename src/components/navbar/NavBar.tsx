@@ -39,12 +39,14 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.85, ease: 'easeOut' }}
             >
               <HiX onClick={() => setToggle(false)} />
-
+              <ul>
               {['Home', 'About', 'Contact', 'Work', 'Skills'].map((item) => (
                 <li className="" key={item}>                  
                   <a onClick={() => setToggle(false)} href={`/${item}`}> {item}</a>
                 </li>
               ))}
+              </ul>
+
 
             </motion.div>
           )}
