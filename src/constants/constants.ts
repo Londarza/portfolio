@@ -24,7 +24,7 @@ import about03 from '@/app/assets/about03.png';
 import about04 from '@/app/assets/about04.png';
 
 import profile from '@/app/assets/profile.png';
-import circle from '@/app/assets/circle.svg';
+import circle from '../app/assets/circle.svg';
 import logo from '@/app/assets/logo.png';
 
 import adidas from '@/app/assets/adidas.png';
@@ -35,8 +35,10 @@ import nb from '@/app/assets/nb.png';
 import skype from '@/app/assets/skype.png';
 import spotify from '@/app/assets/spotify.png';
 
+import newCircle from '@/app/assets/newCircle.png'
 
 const images = {
+  newCircle,
     email,
     mobile,
     api,

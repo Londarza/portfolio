@@ -5,13 +5,14 @@ import './Header.scss'
 import { motion } from 'framer-motion'
 import images from '@/constants/constants'
 import Image from 'next/image';
+import circle from '../../app/assets/circle.svg'
 const Header = () => {
   return (
     <div className='app__header app__flex'>
       <motion.div
-      whileInView={{x:[-100,0], opacity:[0,1]}}
-      transition={{duration:1.5}}
-      className='app__header-info'
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 1.5 }}
+        className='app__header-info'
       >
 
         <div className='app__header-badge'>
@@ -19,7 +20,7 @@ const Header = () => {
             <span>
               👋
             </span>
-            <div style={{marginLeft: 20}}>
+            <div style={{ marginLeft: 20 }}>
               <p className='p-text'>Hola! Soy </p>
               <h1 className='head-text'>Lautaro</h1>
             </div>
@@ -31,27 +32,26 @@ const Header = () => {
         </div>
 
       </motion.div>
-      
+
       <motion.div
-       whileInView={{opacity:[0,1]}}
-       transition={{duration:1.5, delayChildren:0.5}}
-       className='app__header-img'>
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 1.5, delayChildren: 0.5 }}
+        className='app__header-img'>
 
         <Image src={images.profile} alt="profile-img" />
-        <motion.img
-         whileInView={{scale:[0,1]}}
-         transition={{duration:1.5, ease:'easeInOut'}}
-         className='overlay_circle'
-         src={images.circle}
-         alt='profile_circle'>
-          
-         </motion.img>
+        <motion.div
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="overlay_circle"
+        >
+          <Image src={circle} alt="profile_circle" width={200} height={200} />
+        </motion.div>
       </motion.div>
 
       <motion.div
-       whileInView={{opacity:[0,1]}}
-       transition={{duration:1.5, delayChildren:0.5}}
-       className='app__header-info'>
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 1.5, delayChildren: 0.5 }}
+        className='app__header-info'>
 
       </motion.div>
     </div>
