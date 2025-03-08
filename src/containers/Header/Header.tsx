@@ -6,12 +6,26 @@ import { motion } from 'framer-motion'
 import images from '@/constants/constants'
 import Image from 'next/image';
 import circle from '../../app/assets/circle.svg'
+//import { duration } from '@mui/material';
+
+//variants 
+
+const scaleVariants = {
+  whileInView:{
+    scale: [0,1],
+    opacity:[0,1],
+    transition:{
+      duration:1, 
+      ease: 'easeInOut'
+    }
+  }
+}
 const Header = () => {
   return (
-    <div className='app__header app__flex'>
+    <div id='Home' className='app__header app__flex'>
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.5 }}
         className='app__header-info'
       >
 
@@ -35,13 +49,13 @@ const Header = () => {
 
       <motion.div
         whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 1.5, delayChildren: 0.5 }}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'>
 
-        <Image src={images.profile} alt="profile-img" />
+        <Image src={images.profile} alt="profile-img" className='header-img-Image' />
         <motion.div
           whileInView={{ scale: [0, 1] }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="overlay_circle"
         >
           <Image src={circle} alt="profile_circle" width={200} height={200} />
@@ -49,10 +63,17 @@ const Header = () => {
       </motion.div>
 
       <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 1.5, delayChildren: 0.5 }}
-        className='app__header-info'>
-
+       variants={scaleVariants}
+       whileInView={scaleVariants.whileInView}
+       className='app__header-circles'
+        >
+          {
+            [images.flutter, images.redux, images.sass].map((circle, index)=>(
+              <div className='circle-cmp app__flex' key={`circle-${index}`}>
+                <Image src={circle} alt="circle" className='circle-images'/>
+              </div>
+            ))
+          }
       </motion.div>
     </div>
   )
