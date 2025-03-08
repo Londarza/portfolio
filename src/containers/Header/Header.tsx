@@ -58,7 +58,7 @@ const Header = () => {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="overlay_circle"
         >
-          <Image src={circle} alt="profile_circle" width={200} height={200} />
+          <Image src={circle} alt="profile_circle" width={200} height={200} className="overlay_circle" />
         </motion.div>
       </motion.div>
 
