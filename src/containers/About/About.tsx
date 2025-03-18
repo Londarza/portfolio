@@ -1,20 +1,27 @@
 "use client";
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 //styles
 import './About.scss'
-import images from '@/constants/constants'
 
+//fetch
+import {urlFor, client} from '@/client'
 
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 
-const abouts = [
-  { title: 'Web developer', description: 'Soy un gran desarrollador full stack orientado al frontend', urlIMG: images.about01},
-  { title: 'Front end', description: 'React, NextJs, Vite, Typescript, Tailwind Css, SCSS, Framer Motion, React Native', urlIMG: images.about02},
-  { title: 'Back end', description: 'NodeJs, ExpressJs, modelo MVC, Typescript', urlIMG: images.about03},
-  { title: 'Data Base', description: 'PostgreSQL, Sequelize, MySQL, MongoDB, Mongoose', urlIMG: images.about04},
-]
+
+
 export const About = () => {
+
+  const [abouts, setabouts] = useState([])
+  useEffect(() => {
+    const query = '*[_type == "abouts"]{title, description, imgUrl{asset->{_id, url}}}'
+
+    client.fetch(query)
+      .then((data)=>
+        setabouts(data))
+  }, [])
+  
   return (
     <>
     <h2 className='head-text'>
@@ -34,7 +41,7 @@ export const About = () => {
        className='app__profiles-item'
        >
         <Image 
-        src={about.urlIMG} 
+        src={urlFor(about.imgUrl).url()} 
         alt={about.title}
         width={100}
         height={100}
