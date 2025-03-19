@@ -5,13 +5,13 @@ import './About.scss'
 
 //fetch
 import {urlFor, client} from '@/client'
-
+import AppWrap from '@/wrapper/AppWrap';
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 
 
 
-export const About = () => {
+ const About = () => {
 
   const [abouts, setabouts] = useState([])
   useEffect(() => {
@@ -57,3 +57,6 @@ export const About = () => {
     </>
   )
 }
+
+
+export default AppWrap(About,'About')
