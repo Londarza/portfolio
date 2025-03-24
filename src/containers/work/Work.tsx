@@ -15,7 +15,7 @@ import Image from 'next/image'
 const Work = () => {
 
   const [activeFilter, setactiveFilter] = useState('all')
-  const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 })
+  const [animateCard, setanimateCard] = useState([{ y: 0, opacity: 1 }])
   const [works, setWorks] = useState([])
   const [filterWork, setFilterWork] = useState([])
 
@@ -29,6 +29,20 @@ const Work = () => {
 
   }, [])
 
+  const handleWorkFilter = (item) =>{
+    setactiveFilter(item)
+    setanimateCard([{y:100, opacity: 0}])
+
+    setTimeout(() => {
+      setanimateCard([{y:0, opacity: 1}])
+      if (item === 'Todos') {
+        setFilterWork(works)
+      }else{
+        setFilterWork(works.filter((work)=>work.tags.includes(item)))
+      }
+    }, 500);
+  }
+
   return (
     <>
       <h2 className='head-text'>
@@ -40,7 +54,7 @@ const Work = () => {
       </h2>
 
       <div className='app__work-filter'>
-        {['NextJs', 'Typescript', 'NodeJs', 'Tailwind', 'React Native', 'Framer Motion', 'SASS', 'Todos'].map((item, index) => (
+        {['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'NextAuth', 'LandBot', 'maptiler','Stripe','SweetAlert 2','Context API','js-cookie','JWT', 'Todos'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
