@@ -26,7 +26,6 @@ import about04 from '@/app/assets/about04.png';
 import profile from '@/app/assets/profile.png';
 import circle from '../app/assets/circle.svg';
 import logo from '@/app/assets/logo.png';
-
 import adidas from '@/app/assets/adidas.png';
 import amazon from '@/app/assets/amazon.png';
 import asus from '@/app/assets/asus.png';
@@ -34,10 +33,19 @@ import bolt from '@/app/assets/bolt.png';
 import nb from '@/app/assets/nb.png';
 import skype from '@/app/assets/skype.png';
 import spotify from '@/app/assets/spotify.png';
-
+import jwt from '@/app/assets/jwt.png'
+import next from '@/app/assets/nextj.png'
+import nextauth from '@/app/assets/logo-sm-nexgtaut.png'
+import reactNative from'@/app/assets/reactNative.png'
+import tailwind from'@/app/assets/Tailwind_CSS.png'
 import newCircle from '@/app/assets/newCircle.png'
 
 const images = {
+  jwt,
+  nextauth,
+  next,
+  reactNative,
+  tailwind,
   newCircle,
     email,
     mobile,

@@ -8,6 +8,7 @@ import Image from 'next/image';
 import circle from '../../app/assets/circle.svg'
 //import { duration } from '@mui/material';
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 
 //variants 
 
@@ -69,7 +70,7 @@ const Header = () => {
        className='app__header-circles'
         >
           {
-            [images.flutter, images.redux, images.sass].map((circle, index)=>(
+            [images.node, images.next, images.sass].map((circle, index)=>(
               <div className='circle-cmp app__flex' key={`circle-${index}`}>
                 <Image src={circle} alt="circle" className='circle-images'/>
               </div>
@@ -80,4 +81,4 @@ const Header = () => {
   )
 }
 
-export default AppWrap(Header, 'Home', )
+export default AppWrap(MotionWrap(Header, 'app__header') , 'Home', 'app__primarybg')

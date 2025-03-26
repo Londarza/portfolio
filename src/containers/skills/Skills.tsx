@@ -5,6 +5,7 @@ import './Skills.scss'
 import {Tooltip} from 'react-tooltip'
 import { motion } from 'framer-motion'
 import AppWrap from '@/wrapper/AppWrap'
+import MotionWrap from '@/wrapper/MotionWrap'
 import { urlFor, client } from '@/client'
 import Image from 'next/image'
 
@@ -117,4 +118,4 @@ const Skills = () => {
 }
 
 
-export  default AppWrap(Skills, 'Skills')
+export  default AppWrap(MotionWrap(Skills, 'app__skills') , 'Skills', 'app_whitebg')

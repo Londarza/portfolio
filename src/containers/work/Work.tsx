@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import AppWrap from '@/wrapper/AppWrap'
 import { urlFor, client } from '@/client'
 import Image from 'next/image'
+import MotionWrap from '@/wrapper/MotionWrap'
 
 
 
@@ -133,4 +134,4 @@ const Work = () => {
 }
 
 
-export default AppWrap(Work, 'Work')
+export default AppWrap(MotionWrap(Work, 'app__works') , 'Work', 'app__primarybg')

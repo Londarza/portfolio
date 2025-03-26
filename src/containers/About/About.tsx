@@ -6,6 +6,7 @@ import './About.scss'
 //fetch
 import {urlFor, client} from '@/client'
 import AppWrap from '@/wrapper/AppWrap';
+import MotionWrap from '@/wrapper/MotionWrap';
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 
@@ -59,4 +60,4 @@ import Image from 'next/image';
 }
 
 
-export default AppWrap(About,'About')
+export default AppWrap(MotionWrap(About, 'app__about'),'About', 'app_whitebg')
