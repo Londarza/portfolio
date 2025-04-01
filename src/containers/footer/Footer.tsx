@@ -1,28 +1,105 @@
-import Link from "next/link";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+"use client"
+import React, { useState } from 'react'
+import AppWrap from '@/wrapper/AppWrap'
+import MotionWrap from '@/wrapper/MotionWrap'
+import { client } from '@/client';
+import images from '@/constants/constants';
+
 //styles
 import './Footer.scss'
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-gray-900 text-white py-6">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        {/* Derechos de Autor */}
-        <div className="text-center md:text-left mb-4 md:mb-0">
-          <p>&copy; {new Date().getFullYear()} Lautaro Ondarza. Todos los derechos reservados.</p>
-        </div>
+import Image from 'next/image';
+import Link from 'next/link';
 
-        {/* Enlaces de Redes Sociales */}
-        <div className="flex space-x-6">
-          <Link href="https://www.linkedin.com/in/lautaro-ondarza/" target="_blank" className="text-white hover:text-[#00FF88] transition-colors duration-300">
-            <FaLinkedin size={24} />
-          </Link>
-          <Link href="https://github.com/lautaro-ondarza" target="_blank" className="text-white hover:text-[#00FF88] transition-colors duration-300">
-            <FaGithub size={24} />
-          </Link>
+
+const Footer: React.FC = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [loading, setloading] = useState(false)
+
+  const { name, email, message } = formData
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target
+
+    setFormData({ ...formData, [name]: value })
+  }
+  const handleSubmit = (e) => {
+    setloading(true)
+    const contact = {
+      _type: 'contact',
+      name: name,
+      email: email,
+      message: message
+    }
+
+    client.create(contact)
+      .then(() => {
+        setloading(false)
+        setIsFormSubmitted(true)
+      })
+  }
+  return (
+
+    <>
+      <h2 className='head-text'>Gracias por ver mi portfolio, me podes contactar acá</h2>
+
+      <div className='app__footer-cards'>
+        <div className='app__footer-card'>
+          <Image
+            src={images.email}
+            alt='Email'
+            width={100}
+            height={100}
+            className='app__footer-card-img'
+          />
+          <a href="mailto:lautaro.ondarza@gmail.com" className='p-text'>lautaro.ondarza@gmail.com</a>
+        </div>
+        <div className='app__footer-card'>
+          <Image
+            src={images.mobile}
+            alt='Tel'
+            width={100}
+            height={100}
+            className='app__footer-card-img'
+          />
+          <a href="tel: +54 (11) 2242 7074" className='p-text'>+54 (11) 2242 7074</a>
         </div>
       </div>
-    </footer>
+
+      {!isFormSubmitted ?
+        <div className='app__footer-form app__flex'>
+          <div className='app__flex'>
+            <input type="text" className='p-text' placeholder='Tu Nombre / Your Name' value={name} onChange={handleChangeInput} name='name' />
+          </div>
+          <div className='app__flex'>
+            <input type="email" className='p-text' placeholder='Tu Mail / Your Email' value={email} onChange={handleChangeInput} name='email' />
+          </div>
+          <div>
+            <textarea
+              className='p-text'
+              placeholder='Tu Mensaje / Your Message'
+              value={message}
+              name='message'
+              onChange={handleChangeInput} />
+
+          </div>
+          <button
+            type='button'
+            className='p-text'
+            onClick={handleSubmit}>
+            {loading ? 'Enviando/Sending' : "Enviar / Send"}
+          </button>
+        </div>
+        :
+        <div>
+          <h3 className='head-text'>
+            Gracias por contactarme! / Thanks for getting in touch
+          </h3>
+        </div>
+      }
+
+    </>
   );
 };
 
-export default Footer;
+export default AppWrap(MotionWrap(Footer, 'app__footer'), 'Contact', 'app__whitebg');

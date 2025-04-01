@@ -50,7 +50,7 @@ const Testimonials = () => {
   const handleOnClick = (index: number) => { setCurrentIndex(index) }
   return (
     <>
-      {testimonials.length && (<>
+      {testimonials.length> 0 && (<>
         <div className='app__testimonial-item app__flex'>
           <Image
             src={urlFor(test.imageUrl).url()}
@@ -61,11 +61,15 @@ const Testimonials = () => {
           />
           <div className='app__testimonial-content'>
             <p className='p-text'>{test.feedback}</p>
-            <div></div>
+
+            <div>
+              <h4 className='bold-text'>{test.name}</h4>
+              <h5 className='p-text'>{test.company}</h5>
+            </div>
           </div>
-          <h4 className='bold-text'>{test.name}</h4>
-          <h5 className='p-text'>{test.company}</h5>
+
         </div>
+
         <div className='app__testimonial-btns app__flex'>
           <div className='app__flex' onClick={() => handleOnClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
             <HiChevronLeft />
@@ -76,26 +80,28 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div  className='app__testimonials-brands app__flex'>
-        {brands.map((brand)=>(
-          <motion.div
-            whileInView={{opacity:[0,1]}}
-            transition={{duration:0.5, type:'tween'}}
-            key={brand.name}
-          >
-              <Image 
-              src={urlFor(brand.imgUrl).url()}
-              alt={brand.name}
-              width={300}
-              height={300}
-              className='app__testimonials-brands-img'
-              
-              />
-          </motion.div>
+        <div className='app__testimonials-brands app__flex'>
+          {brands.map((brand) => (
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5, type: 'tween' }}
+              key={brand.name}
+            >
+              <Image
+                src={urlFor(brand.imgUrl).url()}
+                alt={brand.name}
+                width={300}
+                height={300}
+                className='app__testimonials-brands-img'
 
-        ))}
+              />
+            </motion.div>
+
+          ))}
         </div>
-      </>)}
+      </>
+      )
+      }
 
 
     </>
