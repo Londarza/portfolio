@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+#back
+/backend-sanity
+
 # testing
 /coverage
 
