@@ -1,5 +1,6 @@
-import { NavigationDotsProps } from '@/app/interfaces'
 import React from 'react'
+//interfaces
+import { NavigationDotsProps } from '@/app/interfaces'
 
 const NavigationDots : React.FC<NavigationDotsProps> = ({ active }) => {
   return (
