@@ -2,7 +2,7 @@
 import React from 'react'
 //styles
 import './Header.scss'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import images from '@/constants/constants'
 import Image from 'next/image';
 import circle from '../../app/assets/circle.svg'
@@ -12,7 +12,7 @@ import MotionWrap from '@/wrapper/MotionWrap';
 
 //variants 
 
-const scaleVariants = {
+const scaleVariants : Variants = {
   whileInView:{
     scale: [0,1],
     opacity:[0,1],
@@ -22,7 +22,7 @@ const scaleVariants = {
     }
   }
 }
-const Header = () => {
+const Header : React.FC = () => {
   return (
     <div className='app__header app__flex'>
       <motion.div
@@ -66,7 +66,7 @@ const Header = () => {
 
       <motion.div
        variants={scaleVariants}
-       whileInView={scaleVariants.whileInView}
+       whileInView={{ scale: [0, 1], opacity: [0, 1] }}
        className='app__header-circles'
         >
           {

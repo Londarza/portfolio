@@ -11,12 +11,13 @@ import AppWrap from '@/wrapper/AppWrap'
 import MotionWrap from '@/wrapper/MotionWrap'
 import { urlFor, client } from '@/client'
 import Image from 'next/image'
+import { IBrand, ITestimonial } from '@/app/interfaces'
 
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([])
-  const [brands, setBrands] = useState([])
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [testimonials, setTestimonials] = useState<ITestimonial[]>([])
+  const [brands, setBrands] = useState<IBrand[]>([])
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
 
 
   useEffect(() => {
@@ -33,13 +34,13 @@ const Testimonials = () => {
     }`;
 
     client.fetch(testimonialsQuery)
-      .then((data) => {
+      .then((data:ITestimonial[]) => {
         console.log('experiences', data);
 
         setTestimonials(data)
       })
     client.fetch(brandsQuery)
-      .then((data) => {
+      .then((data:IBrand[]) => {
         setBrands(data)
       })
 
@@ -81,11 +82,11 @@ const Testimonials = () => {
         </div>
 
         <div className='app__testimonials-brands app__flex'>
-          {brands.map((brand) => (
+          {brands.map((brand, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5, type: 'tween' }}
-              key={brand.name}
+              key={`${brand.name}-${index}`}
             >
               <Image
                 src={urlFor(brand.imgUrl).url()}

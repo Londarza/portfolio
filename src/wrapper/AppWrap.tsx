@@ -1,7 +1,7 @@
 import NavigationDots from '@/components/NavigationDots'
 import SocialMedia from '@/components/SocialMedia'
 import React from 'react'
-const AppWrap = (Component, idName, classNames) => function HOC() {
+const AppWrap = (Component: React.ComponentType, idName : string, classNames : string) => function HOC(): JSX.Element {
   return (
   <div 
     id={idName}

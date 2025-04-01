@@ -1,6 +1,7 @@
+import { NavigationDotsProps } from '@/app/interfaces'
 import React from 'react'
 
-const NavigationDots = ({ active }) => {
+const NavigationDots : React.FC<NavigationDotsProps> = ({ active }) => {
   return (
     <div className='app__navigation'>
       {['Home', 'About', 'Work' , 'Skills','Testimonials','Contact'].map((item, index) => (

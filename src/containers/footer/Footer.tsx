@@ -8,24 +8,26 @@ import images from '@/constants/constants';
 //styles
 import './Footer.scss'
 import Image from 'next/image';
-import Link from 'next/link';
+import { IContact, IContactFormData } from '@/app/interfaces';
 
 
 const Footer: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [loading, setloading] = useState(false)
+  const [formData, setFormData] = useState<IContactFormData>({ name: '', email: '', message: '' })
+  const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false)
+  const [loading, setloading] = useState<boolean>(false)
 
   const { name, email, message } = formData
 
-  const handleChangeInput = (e) => {
+  const handleChangeInput = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
 
     setFormData({ ...formData, [name]: value })
   }
-  const handleSubmit = (e) => {
+  const handleSubmit : React.MouseEventHandler<HTMLButtonElement>= () => {
+    
     setloading(true)
-    const contact = {
+
+    const contact : IContact = {
       _type: 'contact',
       name: name,
       email: email,

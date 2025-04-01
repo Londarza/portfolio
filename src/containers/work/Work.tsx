@@ -10,32 +10,34 @@ import AppWrap from '@/wrapper/AppWrap'
 import { urlFor, client } from '@/client'
 import Image from 'next/image'
 import MotionWrap from '@/wrapper/MotionWrap'
+import { IWork } from '@/app/interfaces'
 
 
 
 const Work = () => {
 
-  const [activeFilter, setactiveFilter] = useState('all')
-  const [animateCard, setanimateCard] = useState([{ y: 0, opacity: 1 }])
-  const [works, setWorks] = useState([])
-  const [filterWork, setFilterWork] = useState([])
+  const [activeFilter, setactiveFilter] = useState<string>('all')
+  const [animateCard, setanimateCard] = useState<{ y: number; opacity: number }>({ y: 0, opacity: 1 })
+
+  const [works, setWorks] = useState<IWork[]>([])
+  const [filterWork, setFilterWork] = useState<IWork[]>([])
 
   useEffect(() => {
     const query = '*[_type == "works"]{title, description, imgUrl{asset->{_id, url}}, projectLink, codeLink, tags}';
     client.fetch(query)
-      .then((data) => {
+      .then((data :IWork[]) => {
         setWorks(data)
         setFilterWork(data)
       })
 
   }, [])
 
-  const handleWorkFilter = (item) =>{
+  const handleWorkFilter = (item :string ) =>{
     setactiveFilter(item)
-    setanimateCard([{y:100, opacity: 0}])
+    setanimateCard({y:100, opacity: 0})
 
     setTimeout(() => {
-      setanimateCard([{y:0, opacity: 1}])
+      setanimateCard({y:0, opacity: 1})
       if (item === 'Todos') {
         setFilterWork(works)
       }else{

@@ -8,11 +8,12 @@ import AppWrap from '@/wrapper/AppWrap'
 import MotionWrap from '@/wrapper/MotionWrap'
 import { urlFor, client } from '@/client'
 import Image from 'next/image'
+import { IExperience, ISkill } from '@/app/interfaces'
 
 
 const Skills = () => {
-  const [experiences, setexperiences] = useState([])
-  const [skills, setSkills] = useState([])
+  const [experiences, setexperiences] = useState<IExperience[]>([])
+  const [skills, setSkills] = useState<ISkill[]>([])
 
 
   useEffect(() => {
@@ -21,13 +22,13 @@ const Skills = () => {
     const skillsQuery = '*[_type == "skills"]{name, bgColor, icon{asset->{_id, url}}}';
 
     client.fetch(expQuery)
-      .then((data) => {
+      .then((data: IExperience[]) => {
         console.log('experiences',data);
         
         setexperiences(data)
       })
     client.fetch(skillsQuery)
-      .then((data) => {
+      .then((data: ISkill[]) => {
         setSkills(data)
       })
 

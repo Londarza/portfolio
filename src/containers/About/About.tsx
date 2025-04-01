@@ -9,17 +9,18 @@ import AppWrap from '@/wrapper/AppWrap';
 import MotionWrap from '@/wrapper/MotionWrap';
 import { motion } from 'framer-motion'
 import Image from 'next/image';
+import { IAboutUs } from '@/app/interfaces';
 
 
 
- const About = () => {
+ const About : React.FC = () => {
 
-  const [abouts, setabouts] = useState([])
+  const [abouts, setabouts] = useState<IAboutUs[]>([])
   useEffect(() => {
     const query = '*[_type == "abouts"]{title, description, imgUrl{asset->{_id, url}}}'
 
     client.fetch(query)
-      .then((data)=>
+      .then((data: IAboutUs[])=>
         setabouts(data))
   }, [])
   

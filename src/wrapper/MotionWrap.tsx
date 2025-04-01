@@ -1,6 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion'
-const MotionWrap = (Component:React.FC, classNames:string) => function HOC() {
+const MotionWrap = (Component:React.FC, classNames:string) => function HOC(): JSX.Element {
   return (
     <motion.div
     whileInView={{opacity:[0,0,1], y:[100,50,0]}}

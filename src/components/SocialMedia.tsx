@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import {BsGithub, BsLinkedin, BsBriefcase } from 'react-icons/bs'
 
-const SocialMedia = () => {
+const SocialMedia : React.FC= () => {
   return (
     <div className='app__social'>
         <div>
