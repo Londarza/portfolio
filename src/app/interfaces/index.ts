@@ -33,6 +33,12 @@ export interface IImage {
     email: string;
     message: string;
   }
+
+  export interface ItemplateParams {
+    from_name: string;
+      from_email: string;
+      message: string;
+  }
   
   export interface IWorkExperience {
     _type: 'workExperience';

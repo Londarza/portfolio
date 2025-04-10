@@ -1,20 +1,25 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AppWrap from '@/wrapper/AppWrap'
 import MotionWrap from '@/wrapper/MotionWrap'
-import { client } from '@/client';
+
 import images from '@/constants/constants';
+import emailjs from '@emailjs/browser';
 
 //styles
 import './Footer.scss'
 import Image from 'next/image';
-import { IContact, IContactFormData } from '@/app/interfaces';
+import { IContactFormData, } from '@/app/interfaces';
 
 
 const Footer: React.FC = () => {
   const [formData, setFormData] = useState<IContactFormData>({ name: '', email: '', message: '' })
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false)
   const [loading, setloading] = useState<boolean>(false)
+
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_MAILJS_PUBLICID || ''); 
+  }, []);
 
   const { name, email, message } = formData
 
@@ -23,22 +28,29 @@ const Footer: React.FC = () => {
 
     setFormData({ ...formData, [name]: value })
   }
-  const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = () => {
-
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setloading(true)
 
-    const contact: IContact = {
-      _type: 'contact',
-      name: name,
-      email: email,
-      message: message
+    const serviceId = process.env.NEXT_PUBLIC_MAILJS_SERVICE ; 
+    const templateId =  process.env.NEXT_PUBLIC_MAILJS_TEMPLATE; 
+  
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    }; 
+    
+    try {
+      await emailjs.send(serviceId || '', templateId || '', templateParams);
+      setIsFormSubmitted(true);
+    } catch (error) {
+      console.error('Error al enviar el email:', error);
+      alert('Hubo un problema al enviar el mensaje. Inténtalo más tarde.');
+    } finally {
+      setloading(false);
     }
-
-    client.create(contact)
-      .then(() => {
-        setloading(false)
-        setIsFormSubmitted(true)
-      })
+    
   }
   return (
 
