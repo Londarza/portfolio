@@ -18,16 +18,16 @@ const Footer: React.FC = () => {
 
   const { name, email, message } = formData
 
-  const handleChangeInput = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
 
     setFormData({ ...formData, [name]: value })
   }
-  const handleSubmit : React.MouseEventHandler<HTMLButtonElement>= () => {
-    
+  const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = () => {
+
     setloading(true)
 
-    const contact : IContact = {
+    const contact: IContact = {
       _type: 'contact',
       name: name,
       email: email,
@@ -58,13 +58,20 @@ const Footer: React.FC = () => {
         </div>
         <div className='app__footer-card'>
           <Image
-            src={images.mobile}
+            src={images.whatsapp}
             alt='Tel'
             width={100}
             height={100}
             className='app__footer-card-img'
           />
-          <a href="tel: +54 (11) 2242 7074" className='p-text'>+54 (11) 2242 7074</a>
+          <a
+            href="https://wa.me/5491122427074?text=Hola%20Lautaro,%20vi%20tu%20portfolio%20y%20me%20interesa%20contactarte"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='p-text'
+          >
+            +54 (11) 2242 7074
+          </a>
         </div>
       </div>
 

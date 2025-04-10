@@ -17,7 +17,8 @@
   align-items: center;
   
   }
-  .app__navbar-logo img{
+  .NavbarLogoImg {
+    object-fit: cover;
     width: 90px;
     height: 20px;
     @media screen and (min-width: 2000px) {

@@ -22,7 +22,7 @@ import about01 from '@/app/assets/about01.png';
 import about02 from '@/app/assets/about02.png';
 import about03 from '@/app/assets/about03.png';
 import about04 from '@/app/assets/about04.png';
-
+import whatsapp from '@/app/assets/WhatsApp.png'
 import profile from '@/app/assets/profile.png';
 import circle from '../app/assets/circle.svg';
 import logo from '@/app/assets/logo.png';
@@ -80,6 +80,7 @@ const images = {
     nb,
     skype,
     spotify,
+    whatsapp
   };
   
   export default images;

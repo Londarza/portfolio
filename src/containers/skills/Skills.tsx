@@ -15,7 +15,6 @@ const Skills = () => {
   const [experiences, setexperiences] = useState<IExperience[]>([])
   const [skills, setSkills] = useState<ISkill[]>([])
 
-
   useEffect(() => {
     const expQuery = '*[_type == "experiences"]{year, works[]{name, company, desc}}';
 
@@ -24,8 +23,8 @@ const Skills = () => {
     client.fetch(expQuery)
       .then((data: IExperience[]) => {
         console.log('experiences',data);
-        
-        setexperiences(data)
+        const sortedData = data.sort((a, b) => Number(b.year) - Number(a.year));
+        setexperiences(sortedData)
       })
     client.fetch(skillsQuery)
       .then((data: ISkill[]) => {
