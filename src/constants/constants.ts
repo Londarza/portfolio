@@ -39,7 +39,10 @@ import nextauth from '@/app/assets/logo-sm-nexgtaut.png'
 import reactNative from'@/app/assets/reactNative.png'
 import tailwind from'@/app/assets/Tailwind_CSS.png'
 import newCircle from '@/app/assets/newCircle.png'
-
+import nextDisabled from '@/app/assets/arrows/next-disabled.png'
+import nextEnabled from '@/app/assets/arrows/next-enabled.png'
+import previousDisabled from '@/app/assets/arrows/previous-disabled.png'
+import previousEnabled from '@/app/assets/arrows/previous-enabled.png'
 const images = {
   jwt,
   nextauth,
@@ -80,7 +83,11 @@ const images = {
     nb,
     skype,
     spotify,
-    whatsapp
+    whatsapp,
+    nextDisabled,
+    nextEnabled,
+    previousDisabled,
+    previousEnabled
   };
   
   export default images;
