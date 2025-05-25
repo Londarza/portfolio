@@ -1,5 +1,12 @@
-.app__carrousel {
+.bg-gray-900 {
 
+    background-color:var(--primary-color);
+}
+.head-text {
+  text-align:start}
+
+.app__carrousel {
+    background-color: var(--primary-color);
     display: grid;
     height: 100vh;
     width: 100vw;
@@ -18,7 +25,7 @@
             padding: 0 0 2rem 0;
         }
     }
-
+    
     .app__carrousel-imagesContainer {
 
         display: flex;
@@ -37,7 +44,7 @@
             .IMG-first {
                 width: clamp(20rem, 22.5vw, 25rem);
                 height: auto;
-                border: 5px solid #eb5757;
+                border: 5px solid var(--secondary-color);
                 border-radius: 2rem;
             }
         }
@@ -51,7 +58,7 @@
             .IMG-second {
                 width: clamp(20rem, 22.5vw, 25rem);
                 height: auto;
-                border: 5px solid #eb5757;
+                border: 5px solid var(--secondary-color);
                 border-radius: 2rem;
             }
         }
@@ -63,12 +70,12 @@
             position: absolute;
 
             .IMG-third {
-                .third {
+                
                     width: clamp(20rem, 22.5vw, 25rem);
                     height: auto;
-                    border: 5px solid #eb5757;
+                    border: 5px solid var(--secondary-color);
                     border-radius: 2rem;
-                }
+                
             }
         }
 
@@ -76,7 +83,8 @@
             display: flex;
             justify-content: space-between;
             position: absolute;
-            left: 0;
+            bottom: 20%;
+            left: -50%;
             width: 10rem;
             z-index: 3;
             transform: translateY(5rem);
@@ -92,39 +100,37 @@
                 height: 4.5rem;
                 width: 4.5rem;
             }
+
             .previousContainer:hover,
             .nextContainer:hover {
-                border-color: #eb5757;
+                border-color: var(--secondary-color);
                 transform: scale(1.05);
             }
 
         }
     }
 
+    .disabled {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: solid 2px transparent;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        height: 4.5rem;
+        width: 4.5rem;
+        cursor: inherit;
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 button {
     display: flex;
     padding: 0.9375rem 1.875rem;
     align-items: center;
     border-radius: 6.25rem;
-    border: 1px solid #eb5757;
-    color: #eb5757;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
     text-align: center;
     font-size: 1rem;
     font-style: normal;
@@ -137,13 +143,43 @@ button {
 }
 
 button:hover {
-    background-color: #eb5757;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 1.50rem;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .app__carrousel {
+        padding: 0 5vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .app__carrousel {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+
+        .app__carrousel-contentContainer {
+            padding: 5rem 0 5rem 0;
+        }
+
+        .app__carrousel-imagesContainer {
+            padding: 0 0 5rem 0;
+
+            .app__carrousel-Controls {
+                padding: 0 0 5rem 0;
+                transform: translateY(8rem);
+                bottom: 110%;
+            }
+        }
     }
 }

@@ -43,6 +43,25 @@ import nextDisabled from '@/app/assets/arrows/next-disabled.png'
 import nextEnabled from '@/app/assets/arrows/next-enabled.png'
 import previousDisabled from '@/app/assets/arrows/previous-disabled.png'
 import previousEnabled from '@/app/assets/arrows/previous-enabled.png'
+import pomodoro1 from '@/app/assets/Pomodoro/PomodoroNative1.jpg'
+import pomodoro2 from '@/app/assets/Pomodoro/PomodoroNative2.jpg'
+import pomodoro3 from '@/app/assets/Pomodoro/PomodoroNative3.jpg'
+import forgefit1 from '@/app/assets/forgefit/Sin título.png'
+import forgefit2 from '@/app/assets/forgefit/Sin título2.jpg'
+import forgefit3 from '@/app/assets/forgefit/Sin título3.jpg'
+import hiptek1 from '@/app/assets/hiptek/hiptek1.jpg'
+import hiptek2 from '@/app/assets/hiptek/hiptek2.jpg'
+import hiptek3 from '@/app/assets/hiptek/hiptek3.jpg'
+import namaste1 from '@/app/assets/namaste/namaste.jpg'
+import namaste2 from '@/app/assets/namaste/namaste1.jpg'
+import namaste3 from '@/app/assets/namaste/namaste3.jpg'
+export const proyectImages = {
+  pomodoro : [pomodoro1,pomodoro2,pomodoro3],
+  forgefit: [forgefit1,forgefit2,forgefit3],
+  hiptek: [hiptek1,hiptek2,hiptek3],
+  namaste:[namaste1, namaste2, namaste3]
+} 
+
 const images = {
   jwt,
   nextauth,
