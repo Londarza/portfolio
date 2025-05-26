@@ -3,12 +3,19 @@ import Carrousel from "@/components/carrousel/Carrousel";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/constants/projectsData";
 
-interface Props {
-  params: { name: string };
+type Props = {
+  params: Promise<{
+    name: string;
+  }>;
+};
+
+export async function generateStaticParams() {
+  return Object.keys(projectsData).map((name) => ({ name }));
 }
 
-export default function Galery({ params }: Props) {
-  const project = projectsData[params.name];
+export default async function Galery({ params } : Props) {
+  const {name} =  await params
+  const project = projectsData[name];
 
   if (!project) return notFound();
 

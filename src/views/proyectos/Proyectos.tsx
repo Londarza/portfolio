@@ -1,4 +1,4 @@
-"use client";
+/*
 
 import Carrousel from "@/components/carrousel/Carrousel";
 import { useState, useEffect } from "react";
@@ -52,16 +52,16 @@ const Proyectos: React.FC = () => {
   ];
   return (
     <main className="proyectos-main min-h-screen bg-gray-900 text-white">
-      {/* Título de la sección */}
+      
       <section className="proyectos-header text-center py-16">
         <h1 className="text-4xl md:text-5xl font-bold animate__animated animate__fadeInUp animate__delay-1s">
           Proyectos en los que he participado
         </h1>
       </section>
 
-      {/* Lista de proyectos */}
+     
       <section className="proyectos-list grid grid-cols-1 gap-12 px-6 sm:px-12 md:grid-cols-2 xl:grid-cols-3">
-        {/* Proyecto 1 */}
+        
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             ForgeFit
@@ -97,7 +97,7 @@ const Proyectos: React.FC = () => {
 
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
-                {/* Aquí se incluiría el carrusel de imágenes */}
+             
                 <Carrousel images={forgeFitImages} />
               </div>
             </div>
@@ -109,7 +109,7 @@ const Proyectos: React.FC = () => {
               >
                 Video del proyecto
               </a>
-              {/* ReactPlayer renderizado solo en el cliente */}
+              
               {isClient && (
                 <ReactPlayer
                   url="https://vimeo.com/1037638264?share=copy"
@@ -137,7 +137,7 @@ const Proyectos: React.FC = () => {
           </div>
         </div>
 
-        {/* Proyecto 2 */}
+        
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             HipTek
@@ -169,7 +169,7 @@ const Proyectos: React.FC = () => {
 
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
-                {/* Aquí se incluiría el carrusel de imágenes */}
+               
                 <Carrousel images={hiptekImages} />
               </div>
             </div>
@@ -185,7 +185,7 @@ const Proyectos: React.FC = () => {
           </div>
         </div>
 
-        {/* Proyecto 3 */}
+        
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             Namaste
@@ -218,7 +218,7 @@ const Proyectos: React.FC = () => {
 
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
-                {/* Aquí se incluiría el carrusel de imágenes */}
+                
                 <Carrousel images={namasteImages} />
               </div>
             </div>
@@ -234,7 +234,7 @@ const Proyectos: React.FC = () => {
           </div>
         </div>
 
-        {/* Proyecto 4*/}
+      
         <div className="proyecto-card bg-gray-800 rounded-lg shadow-lg overflow-hidden ">
           <h2 className="proyecto-titulo text-2xl font-semibold p-6 bg-gray-700">
             Pomodoro React Native
@@ -259,7 +259,7 @@ const Proyectos: React.FC = () => {
 
             <div className="proyecto-carrousel">
               <div className="carrousel-placeholder bg-gray-600 rounded-md h-64 mb-4">
-                {/* Aquí se incluiría el carrusel de imágenes */}
+              
                 <Carrousel images={PomodoroImg} />
               </div>
             </div>
@@ -271,7 +271,7 @@ const Proyectos: React.FC = () => {
               >
                 Video del proyecto
               </a>
-              {/* ReactPlayer renderizado solo en el cliente */}
+              
               {isClient && (
                 <ReactPlayer
                   url="https://vimeo.com/1053110341/fdfdbaa32e?share=copy"
@@ -298,3 +298,4 @@ const Proyectos: React.FC = () => {
 };
 
 export default Proyectos;
+*/
