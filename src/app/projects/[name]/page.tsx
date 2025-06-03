@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export default async function Galery({ params } : Props) {
   const {name} =  await params
   const project = projectsData[name];
-
+  console.log('proyeccto', name)
   if (!project) return notFound();
 
   return (

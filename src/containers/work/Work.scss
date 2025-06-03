@@ -134,6 +134,13 @@
     width: 100%;
     position: relative;
     flex-direction: column;
+    p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // número de líneas visibles
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   
     h4 {
       margin-top: 1rem;

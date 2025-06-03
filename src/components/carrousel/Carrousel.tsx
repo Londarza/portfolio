@@ -1,9 +1,11 @@
 "use client";
 import '@/components/carrousel/Carrousel.scss'
 import Image, { StaticImageData } from 'next/image';
-import {  motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import images from '@/constants/constants';
 import { useState } from 'react';
+
+
 interface CarrouselProps {
   imagesProp: {
     image: StaticImageData[]
@@ -16,28 +18,35 @@ interface CarrouselProps {
 const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const [transitionDirection, setTransitionDirection] = useState('next')
-  // funcion para flecha atras y adelante
+  const [transitionDirection, setTransitionDirection] = useState<'next' | 'previous'>('next')
+
+  // Navegar hacia adelante
   const handleNext = () => {
-    setTransitionDirection('next')
-    setActiveIndex((prevIndex: number) => prevIndex === 2 ? prevIndex : prevIndex + 1)
-  }
+    if (activeIndex < imagesProp.image.length - 1) {
+      setTransitionDirection('next');
+      setActiveIndex(prev => prev + 1);
+    }
+  };
+
+  // Navegar hacia atrás
   const handlePrevious = () => {
-    setTransitionDirection('previous')
-    setActiveIndex((prevIndex: number) => prevIndex === 0 ? prevIndex : prevIndex - 1)
-  }
+    if (activeIndex > 0) {
+      setTransitionDirection('previous');
+      setActiveIndex(prev => prev - 1);
+    }
+  };
 
   // definiendo animaciones
 
   const textVariants = {
     hidden: {
       opacity: 0,
-      x: transitionDirection === 'next' ? 100 : -100,
+      y: transitionDirection === 'next' ? 50 : -50,
       transition: { duration: 0.5, ease: 'easeInOut' }
     },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: { duration: 0.5, ease: 'easeInOut' }
     }
   }
@@ -50,6 +59,7 @@ const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
   return (
 
     <div className='app__carrousel'>
+      {/* Contenido del texto */}
       <motion.div
         className='app__carrousel-contentContainer'
         key={activeIndex}
@@ -63,57 +73,57 @@ const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
         <div className='app__carrousel-contentDescription'>
           <motion.p className='p-text' variants={textVariants}>{imagesProp.description}</motion.p>
         </div>
-      
+
 
 
       </motion.div>
-
+        {/* Contenedor de imágenes */}
       <div className='app__carrousel-imagesContainer'>
-        <motion.div
-          className='app__carrousel-FirstContainer'
-          animate={{
-            opacity: activeIndex === 0 ? 1 : activeIndex === 1 ? 0 : 0,
-            x: activeIndex === 0 ? '0px' : activeIndex === 1 ? '96px' : '96 px', 
-            scale: activeIndex === 0 ? 1 : activeIndex === 1 ? 1.2 : 1.2
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0,
-            ease: 'easeInOut'
-          }}
-        >
-          <Image className='IMG-first' alt='first-image' src={imagesProp.image[0]} width={200} height={300} />
-        </motion.div>
-        <motion.div
-          className='app__carrousel-SecondContainer'
-          animate={{
-            opacity: activeIndex === 0 ? 0.66 : activeIndex === 1 ? 1 : 0,
-            x: activeIndex === 0 ? '-96px' : activeIndex === 1 ? '0px' : '96 px', 
-            scale: activeIndex === 0 ? 0.8 : activeIndex === 1 ? 1 : 1.2
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0,
-            ease: 'easeInOut'
-          }}
-        >
-          <Image className='IMG-second' alt='second-image' src={imagesProp.image[1]} width={200} height={300} />
-        </motion.div>
-        <motion.div
-          className='app__carrousel-ThirdContainer'
-          animate={{
-            opacity: activeIndex === 0 ? 0.33 : activeIndex === 1 ? 0.66 : 1,
-            x: activeIndex === 0 ? '-192px' : activeIndex === 1 ? '-96px' : '0px', 
-            scale: activeIndex === 0 ? 0.6 : activeIndex === 1 ? 0.8 : 1
-          }}
-          transition={{
-            duration: 0.5,
-            delay:0,
-            ease: 'easeInOut'
-          }}
-        >
-          <Image className='IMG-third' alt='third-image' src={imagesProp.image[2]} width={200} height={300} />
-        </motion.div>
+       {imagesProp.image.map((img, index) => {
+          const offset = index - activeIndex;
+
+          // Lógica dinámica para escala, opacidad y posición horizontal
+          let scale = 1;
+          let opacity = 1;
+          const y = `${offset * 96}px`;
+          const zIndex = 20 - Math.abs(offset);
+          if (offset === 0) {
+            scale = 1;
+            opacity = 1;
+          } else if (Math.abs(offset) === 1) {
+            scale = 0.8;
+            opacity = 0.66;
+          } else {
+            scale = 0.6;
+            opacity = 0.33;
+          }
+
+          return (
+            <motion.div
+              key={index}
+              className='app__carrousel-ImageContainer'
+               style={{ zIndex }}
+              animate={{
+                opacity,
+                y,
+                scale
+              }}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut'
+              }}
+            >
+              <Image
+                className='app__carrousel-Image'
+                alt={`image-${index}`}
+                src={img}
+                layout='responsive'
+              />
+            </motion.div>
+          );
+        })}
+        {/* Controles de navegación */}
+
         <div className='app__carrousel-Controls'>
           <button className={activeIndex === 0 ? 'disabled' : 'previousContainer'} onClick={handlePrevious}>
             <Image
@@ -121,10 +131,10 @@ const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
               src={activeIndex === 0 ? images.previousDisabled : images.previousEnabled}
             />
           </button>
-          <button className={activeIndex === 2 ? 'disabled' : 'nextContainer'} onClick={handleNext}>
+          <button className={activeIndex === imagesProp.image.length - 1 ? 'disabled' : 'nextContainer'} onClick={handleNext}>
             <Image
               alt='next-img'
-              src={activeIndex === 2 ? images.nextDisabled : images.nextEnabled}
+              src={activeIndex === imagesProp.image.length - 1 ? images.nextDisabled : images.nextEnabled}
             />
           </button>
         </div>

@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
           <Image src={images.logo} alt="logo" className="NavbarLogoImg"/>
         </div>
         <ul className="app__navbar-links">
-          {['Home', 'About', 'Work' , 'Skills','Testimonials','Contact'].map((item) => (
+          {['Home', 'About', 'Work' , 'Skills','Contact'].map((item) => (
             <li className="app__flex p-text" key={`Link-${item}`}>
               <div></div>
               <a href={`/#${item}`}> {item}</a>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             >
               <HiX onClick={() => setToggle(false)} />
               <ul>
-              {['Home', 'About', 'Work' , 'Skills','Testimonials','Contact'].map((item) => (
+              {['Home', 'About', 'Work' , 'Skills','Contact'].map((item) => (
                 <li className="" key={item}>                  
                   <a onClick={() => setToggle(false)} href={`/#${item}`}> {item}</a>
                 </li>

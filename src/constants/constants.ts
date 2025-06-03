@@ -46,20 +46,44 @@ import previousEnabled from '@/app/assets/arrows/previous-enabled.png'
 import pomodoro1 from '@/app/assets/Pomodoro/PomodoroNative1.jpg'
 import pomodoro2 from '@/app/assets/Pomodoro/PomodoroNative2.jpg'
 import pomodoro3 from '@/app/assets/Pomodoro/PomodoroNative3.jpg'
+import pomodoro4 from '@/app/assets/Pomodoro/PomodoroNative4.jpg'
+import pomodoro5 from '@/app/assets/Pomodoro/PomodoroNative5.jpg'
 import forgefit1 from '@/app/assets/forgefit/Sin título.png'
 import forgefit2 from '@/app/assets/forgefit/Sin título2.jpg'
 import forgefit3 from '@/app/assets/forgefit/Sin título3.jpg'
+import forgefit4 from '@/app/assets/forgefit/Sin título4.jpg'
+import forgefit5 from '@/app/assets/forgefit/Sin título5.jpg'
+import forgefit6 from '@/app/assets/forgefit/Sin título6.jpg'
+import forgefit7 from '@/app/assets/forgefit/Sin título7.jpg'
+import forgefit8 from '@/app/assets/forgefit/Sin título8.jpg'
+import forgefit9 from '@/app/assets/forgefit/Sin título9.jpg'
 import hiptek1 from '@/app/assets/hiptek/hiptek1.jpg'
 import hiptek2 from '@/app/assets/hiptek/hiptek2.jpg'
 import hiptek3 from '@/app/assets/hiptek/hiptek3.jpg'
+import hiptek4 from '@/app/assets/hiptek/hiptek4.jpg'
+import hiptek5 from '@/app/assets/hiptek/hiptek5.jpg'
+import hiptek6 from '@/app/assets/hiptek/hiptek6.jpg'
+import hiptek7 from '@/app/assets/hiptek/hiptek7.jpg'
+import hiptek8 from '@/app/assets/hiptek/hiptek8.jpg'
 import namaste1 from '@/app/assets/namaste/namaste.jpg'
 import namaste2 from '@/app/assets/namaste/namaste1.jpg'
-import namaste3 from '@/app/assets/namaste/namaste3.jpg'
+import namaste3 from '@/app/assets/namaste/namaste2.jpg'
+import namaste4 from '@/app/assets/namaste/namaste3.jpg'
+import namaste5 from '@/app/assets/namaste/namaste4.jpg'
+import namaste6 from '@/app/assets/namaste/namaste5.jpg'
+import namaste7 from '@/app/assets/namaste/namaste6.jpg'
+import namaste8 from '@/app/assets/namaste/namaste7.jpg'
+import nasanative1 from '@/app/assets/nasanative/native1_LE_upscale_gentle_x4.jpeg'
+import nasanative2 from '@/app/assets/nasanative/native2_LE_upscale_gentle_x4.jpeg'
+import nasanative3 from '@/app/assets/nasanative/native3_LE_upscale_gentle_x4.jpeg'
+import nasanative4 from '@/app/assets/nasanative/native4_LE_upscale_gentle_x4.jpeg'
+import nasanative5 from '@/app/assets/nasanative/native5_LE_upscale_gentle_x4.jpeg'
 export const proyectImages = {
-  pomodoro : [pomodoro1,pomodoro2,pomodoro3],
-  forgefit: [forgefit1,forgefit2,forgefit3],
-  hiptek: [hiptek1,hiptek2,hiptek3],
-  namaste:[namaste1, namaste2, namaste3]
+  pomodoro : [pomodoro1,pomodoro2,pomodoro3,pomodoro4,pomodoro5],
+  forgefit: [forgefit1,forgefit2,forgefit3, forgefit4,forgefit5, forgefit6, forgefit7, forgefit8, forgefit9],
+  hiptek: [hiptek1,hiptek2,hiptek3,hiptek4,hiptek5,hiptek6,hiptek7,hiptek8],
+  namaste:[namaste1, namaste2, namaste3, namaste4, namaste5, namaste6, namaste7, namaste8],
+  nasanative: [nasanative1, nasanative2, nasanative3, nasanative4, nasanative5]
 } 
 
 const images = {

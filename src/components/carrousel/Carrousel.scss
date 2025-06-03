@@ -1,16 +1,33 @@
 .bg-gray-900 {
 
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
 }
+
 .head-text {
-  text-align:start}
+    text-align: start
+}
+
+.app__carrousel-ImageContainer {
+    position: absolute;
+    width: clamp(22rem, 30vw, 32rem);
+    height: calc(clamp(22rem, 30vw, 32rem) * 0.9);
+    z-index: 0;
+
+    .app__carrousel-Image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 5px solid var(--secondary-color);
+        border-radius: 2rem;
+    }
+}
 
 .app__carrousel {
     background-color: var(--primary-color);
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 100%;
     align-items: center;
     justify-content: space-between;
@@ -23,9 +40,17 @@
 
         .app__carrousel-contentDescription {
             padding: 0 0 2rem 0;
+
+            .p-text {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+                max-width: 100%;
+                line-height: 1.5;
+            }
         }
     }
-    
+
     .app__carrousel-imagesContainer {
 
         display: flex;
@@ -70,12 +95,12 @@
             position: absolute;
 
             .IMG-third {
-                
-                    width: clamp(20rem, 22.5vw, 25rem);
-                    height: auto;
-                    border: 5px solid var(--secondary-color);
-                    border-radius: 2rem;
-                
+
+                width: clamp(20rem, 22.5vw, 25rem);
+                height: auto;
+                border: 5px solid var(--secondary-color);
+                border-radius: 2rem;
+
             }
         }
 
@@ -152,6 +177,12 @@ button:hover {
     h1 {
         font-size: 1.50rem;
     }
+    .app__carrousel-contentDescription, .p-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 20;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -178,7 +209,29 @@ button:hover {
             .app__carrousel-Controls {
                 padding: 0 0 5rem 0;
                 transform: translateY(8rem);
-                bottom: 110%;
+                bottom: 1rem;
+        left: 30%;
+        transform: translateX(-50%);
+        z-index: 50;
+        display: flex;
+        gap: 1rem;
+
+        .previousContainer,
+        .nextContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.05);
+          border: solid 2px var(--secondary-color);
+          
+        }
+
+        .previousContainer:hover,
+        .nextContainer:hover {
+          transform: scale(1.1);
+        }
+
+        
             }
         }
     }

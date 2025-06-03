@@ -27,5 +27,10 @@ export const projectsData: Record<string, {
     image: proyectImages.pomodoro,
     title: "Pomodoro",
     description: "Primer App creada para celular usando React Native, una app pomodoro simple para aprender los conceptos basicos de react Native. Se incluyen estados generales para controlar el tiempo de actividad y descanso, se agregan sonidos en la app."
+  },
+  nasanative:{
+    image: proyectImages.nasanative,
+    title: "Nasa App",
+    description: "Desarrollé una aplicación mobile con React Native y Expo que permite explorar imágenes astronómicas provistas por la API de la NASA. La app muestra una imagen destacada del día junto con su título y fecha, y además ofrece una lista de las últimas cinco imágenes disponibles, permitiendo al usuario acceder a una vista detallada de cada una. Para la navegación entre pantallas implementé Expo Router, lo que me permitió trabajar con rutas dinámicas y pasar parámetros entre componentes de forma sencilla. A lo largo del desarrollo, gestioné correctamente los estados y efectos usando hooks de React, y estructuré la interfaz con componentes reutilizables, aplicando buenas prácticas de diseño y asegurando compatibilidad con distintos dispositivos gracias al uso de SafeAreaView y layouts responsivos. Este proyecto refleja mi habilidad para consumir APIs externas, construir experiencias móviles fluidas y mantener un código organizado y escalable."
   }
 };
