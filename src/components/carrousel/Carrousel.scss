@@ -1,238 +1,45 @@
-.bg-gray-900 {
-
-    background-color: var(--primary-color);
-}
-
-.head-text {
-    text-align: start
-}
-
-.app__carrousel-ImageContainer {
-    position: absolute;
-    width: clamp(22rem, 30vw, 32rem);
-    height: calc(clamp(22rem, 30vw, 32rem) * 0.9);
-    z-index: 0;
-
-    .app__carrousel-Image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 5px solid var(--secondary-color);
-        border-radius: 2rem;
-    }
-}
-
 .app__carrousel {
-    background-color: var(--primary-color);
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    grid-template-columns: 35% 65%;
-    grid-template-rows: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10vw;
-
-    .app__carrousel-contentContainer {
-        .app__carrousel-contentTitle {
-            padding: 0 0 2rem 0;
-        }
-
-        .app__carrousel-contentDescription {
-            padding: 0 0 2rem 0;
-
-            .p-text {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                hyphens: auto;
-                max-width: 100%;
-                line-height: 1.5;
-            }
-        }
-    }
-
-    .app__carrousel-imagesContainer {
-
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: flex-start;
-        position: relative;
-        height: 35rem;
-
-        .app__carrousel-FirstContainer {
-            z-index: 2;
-            width: clamp(20rem, 22.5vw, 25rem);
-            height: auto;
-            position: absolute;
-
-            .IMG-first {
-                width: clamp(20rem, 22.5vw, 25rem);
-                height: auto;
-                border: 5px solid var(--secondary-color);
-                border-radius: 2rem;
-            }
-        }
-
-        .app__carrousel-SecondContainer {
-            z-index: 1;
-            width: clamp(20rem, 22.5vw, 25rem);
-            height: auto;
-            position: absolute;
-
-            .IMG-second {
-                width: clamp(20rem, 22.5vw, 25rem);
-                height: auto;
-                border: 5px solid var(--secondary-color);
-                border-radius: 2rem;
-            }
-        }
-
-        .app__carrousel-ThirdContainer {
-            z-index: 0;
-            width: clamp(20rem, 22.5vw, 25rem);
-            height: auto;
-            position: absolute;
-
-            .IMG-third {
-
-                width: clamp(20rem, 22.5vw, 25rem);
-                height: auto;
-                border: 5px solid var(--secondary-color);
-                border-radius: 2rem;
-
-            }
-        }
-
-        .app__carrousel-Controls {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            bottom: 20%;
-            left: -50%;
-            width: 10rem;
-            z-index: 3;
-            transform: translateY(5rem);
-
-            .previousContainer,
-            .nextContainer {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: transparent;
-                border: solid 2px transparent;
-                transition: border-color 0.3s ease, transform 0.3s ease;
-                height: 4.5rem;
-                width: 4.5rem;
-            }
-
-            .previousContainer:hover,
-            .nextContainer:hover {
-                border-color: var(--secondary-color);
-                transform: scale(1.05);
-            }
-
-        }
-    }
-
-    .disabled {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        border: solid 2px transparent;
-        transition: border-color 0.3s ease, transform 0.3s ease;
-        height: 4.5rem;
-        width: 4.5rem;
-        cursor: inherit;
-    }
+    
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  position: relative;
+  
+}
+.head-text{
+    margin-top: 20px;
 
 }
-
-button {
-    display: flex;
-    padding: 0.9375rem 1.875rem;
-    align-items: center;
-    border-radius: 6.25rem;
-    border: 1px solid var(--secondary-color);
-    color: var(--secondary-color);
-    text-align: center;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease;
+.app__carrousel-swiper {
+  width: 100%;
 }
 
-button:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transition: background-color 0.15s ease, color 0.15s ease;
+.app__carrousel-Image {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.50rem;
-    }
-    .app__carrousel-contentDescription, .p-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 20;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .app__carrousel {
+    padding: 2rem;
+  }
+  .app__carrousel-Image {
+    max-height: 450px;
   }
 }
 
-@media screen and (max-width: 1199px) {
-    .app__carrousel {
-        padding: 0 5vw;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .app__carrousel {
-        display: grid;
-        height: 100vh;
-        width: 100vw;
-        grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr;
-
-        .app__carrousel-contentContainer {
-            padding: 5rem 0 5rem 0;
-        }
-
-        .app__carrousel-imagesContainer {
-            padding: 0 0 5rem 0;
-
-            .app__carrousel-Controls {
-                padding: 0 0 5rem 0;
-                transform: translateY(8rem);
-                bottom: 1rem;
-        left: 30%;
-        transform: translateX(-50%);
-        z-index: 50;
-        display: flex;
-        gap: 1rem;
-
-        .previousContainer,
-        .nextContainer {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: rgba(255, 255, 255, 0.05);
-          border: solid 2px var(--secondary-color);
-          
-        }
-
-        .previousContainer:hover,
-        .nextContainer:hover {
-          transform: scale(1.1);
-        }
-
-        
-            }
-        }
-    }
+@media screen and (min-width: 1200px) {
+  .app__carrousel {
+    margin: 3rem auto;
+  }
+  .app__carrousel-Image {
+    max-height: 400px;
+  }
 }
