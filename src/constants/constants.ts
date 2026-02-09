@@ -84,20 +84,23 @@ import preventigen2 from '@/app/assets/preventigen/preventigen 2.jpg'
 import preventigen3 from '@/app/assets/preventigen/preventigen 3.jpg'
 import preventigen4 from '@/app/assets/preventigen/preventigen 4.jpg'
 import preventigen5 from '@/app/assets/preventigen/preventigen 5.jpg'
+import preventigen6 from '@/app/assets/preventigen/preventigen 6.jpg'
 
-import swaplyar1 from '@/app/assets/swaplyar/swaply1.jpg'
+import swaplyar1 from '@/app/assets/swaplyAr/swaply1.jpg'
 import swaplyar2 from '@/app/assets/swaplyar/swaply2.jpg'
 import swaplyar3 from '@/app/assets/swaplyar/swaply3.jpg'
 import swaplyar4 from '@/app/assets/swaplyar/swaply4.jpg'
 import swaplyar5 from '@/app/assets/swaplyar/swaply5.jpg'
+import swaplyar6 from '@/app/assets/swaplyar/swaply6.jpg'
+import swaplyar7 from '@/app/assets/swaplyar/swaply7.jpg'
 export const proyectImages = {
   pomodoro : [pomodoro1,pomodoro2,pomodoro3,pomodoro4,pomodoro5],
   forgefit: [forgefit1,forgefit2,forgefit3, forgefit4,forgefit5, forgefit6, forgefit7, forgefit8, forgefit9],
   hiptek: [hiptek1,hiptek2,hiptek3,hiptek4,hiptek5,hiptek6,hiptek7,hiptek8],
   namaste:[namaste1, namaste2, namaste3, namaste4, namaste5, namaste6, namaste7, namaste8],
   nasanative: [nasanative1, nasanative2, nasanative3, nasanative4, nasanative5],
-  preventigen: [preventigen1, preventigen2, preventigen3, preventigen4, preventigen5],
-  swaplyar: [swaplyar1, swaplyar2, swaplyar3, swaplyar4, swaplyar5]
+  preventigen: [preventigen1, preventigen2, preventigen3, preventigen4, preventigen5, preventigen6],
+  swaplyar: [swaplyar1, swaplyar2, swaplyar3, swaplyar4, swaplyar5, swaplyar6, swaplyar7]
 } 
 
 const images = {
