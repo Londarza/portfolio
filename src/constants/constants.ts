@@ -87,12 +87,12 @@ import preventigen5 from '@/app/assets/preventigen/preventigen 5.jpg'
 import preventigen6 from '@/app/assets/preventigen/preventigen 6.jpg'
 
 import swaplyar1 from '@/app/assets/swaplyAr/swaply1.jpg'
-import swaplyar2 from '@/app/assets/swaplyar/swaply2.jpg'
-import swaplyar3 from '@/app/assets/swaplyar/swaply3.jpg'
-import swaplyar4 from '@/app/assets/swaplyar/swaply4.jpg'
-import swaplyar5 from '@/app/assets/swaplyar/swaply5.jpg'
-import swaplyar6 from '@/app/assets/swaplyar/swaply6.jpg'
-import swaplyar7 from '@/app/assets/swaplyar/swaply7.jpg'
+import swaplyar2 from '@/app/assets/swaplyAr/swaply2.jpg'
+import swaplyar3 from '@/app/assets/swaplyAr/swaply3.jpg'
+import swaplyar4 from '@/app/assets/swaplyAr/swaply4.jpg'
+import swaplyar5 from '@/app/assets/swaplyAr/swaply5.jpg'
+import swaplyar6 from '@/app/assets/swaplyAr/swaply6.jpg'
+import swaplyar7 from '@/app/assets/swaplyAr/swaply7.jpg'
 export const proyectImages = {
   pomodoro : [pomodoro1,pomodoro2,pomodoro3,pomodoro4,pomodoro5],
   forgefit: [forgefit1,forgefit2,forgefit3, forgefit4,forgefit5, forgefit6, forgefit7, forgefit8, forgefit9],
