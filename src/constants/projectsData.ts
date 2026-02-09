@@ -32,5 +32,15 @@ export const projectsData: Record<string, {
     image: proyectImages.nasanative,
     title: "Nasa App",
     description: "Desarrollé una aplicación mobile con React Native y Expo que permite explorar imágenes astronómicas provistas por la API de la NASA. La app muestra una imagen destacada del día junto con su título y fecha, y además ofrece una lista de las últimas cinco imágenes disponibles, permitiendo al usuario acceder a una vista detallada de cada una. Para la navegación entre pantallas implementé Expo Router, lo que me permitió trabajar con rutas dinámicas y pasar parámetros entre componentes de forma sencilla. A lo largo del desarrollo, gestioné correctamente los estados y efectos usando hooks de React, y estructuré la interfaz con componentes reutilizables, aplicando buenas prácticas de diseño y asegurando compatibilidad con distintos dispositivos gracias al uso de SafeAreaView y layouts responsivos. Este proyecto refleja mi habilidad para consumir APIs externas, construir experiencias móviles fluidas y mantener un código organizado y escalable."
-  }
-};
+  },
+  Preventigen: {
+    image: proyectImages.preventigen,
+    title: "Preventigen",
+    description: `Preventigen es una startup medica, que busca mejorar la experiencia de los medicos y de los pacientes con ayuda de la IA. El proyecto busca prevenir con ayuda de la IA a los pacientes a detectar tratamientos antes de que sucedan y, a su vez, reducir los errores medicos clinicos. Por el momento desarrolle la pagina de presentacion de la empresa desde cero, seleccionando colores, animaciones  y diseño para crear una página profesional y con una excelente experiencia de usuario.
+    La página se encuentra deployada en https://preventigen-front.vercel.app/`
+  },
+  Swaplyar: {
+    image: proyectImages.swaplyar,
+    title: "Swaplyar",
+    description: "Empresa del rubro Fintech, donde me desempeñé como desarrollador front end. Se crearon componentes reutilizables siguiendo un diseño en Figma (pixel perfect), se solucionaron bugs carga y errores en el store de Redux, se implementaron Websockets para mejorar la comunicacion y actualizacion de precios en tiempo real, ayude a solucionar fallas en la autorizacion y autenticacion usando nextAuth y actualizando los datos de sesión usando JWT. Trabajé en un equipo multicultural, mano a mano con backend para ofrecer soluciones funcionales y escalables. "
+}}

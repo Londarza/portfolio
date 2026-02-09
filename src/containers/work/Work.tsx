@@ -59,7 +59,7 @@ const Work = () => {
       </h2>
 
       <div className='app__work-filter'>
-        {['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'NextAuth', 'LandBot', 'maptiler','Stripe','SweetAlert 2','Context API','js-cookie','JWT','React Native','Expo', 'Expo-av','ViteJs','Redux','Axios', 'Styled Components', 'TypeORM', 'Todos'].map((item, index) => (
+        {['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'NextAuth', 'LandBot', 'maptiler','Stripe','SweetAlert 2','Context API','js-cookie','JWT','React Native','Expo', 'Expo-av','ViteJs','Redux','Axios', 'Styled Components', 'TypeORM','Radix Components','Websockets', 'Todos'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
