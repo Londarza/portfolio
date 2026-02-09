@@ -34,25 +34,33 @@ const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
         <motion.h1 className="head-text" variants={textVariants}>
           Proyecto <span>{imagesProp.title}</span>
         </motion.h1>
-        <motion.p className="p-text" variants={textVariants}>
-          {imagesProp.description}
+        <motion.div className="app__carrousel-text" variants={textVariants}>
+          <p className="p-text app__carrousel-description">
+            {imagesProp.description}
+          </p>
           {imagesProp.link && (
-            <a href={imagesProp.link} target="_blank" rel="noopener noreferrer" className="app__carrousel-link">
+            <a
+              href={imagesProp.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="app__carrousel-link"
+            >
               Link al Deploy
             </a>
           )}
-        </motion.p>
+        </motion.div>
       </motion.div>
 
       { /* Slider con Swiper */}
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        spaceBetween={20}
+        spaceBetween={12}
         slidesPerView={1}
         breakpoints={{
-          640: { slidesPerView: 1.2 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          480: { slidesPerView: 1.05, spaceBetween: 14 },
+          640: { slidesPerView: 1.2, spaceBetween: 16 },
+          900: { slidesPerView: 2, spaceBetween: 20 },
+          1200: { slidesPerView: 3, spaceBetween: 24 },
         }}
         navigation
         pagination={{ clickable: true }}

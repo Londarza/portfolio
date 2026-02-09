@@ -53,6 +53,12 @@
         @media screen and (max-width: 450px) {
             width: 100%;
         }
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            text-align: center;
+            padding: 0.85rem;
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -128,5 +134,19 @@
     @media screen and (max-width: 768px) {
         width: 100%;
         margin: 1rem 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        div {
+            margin: 0.6rem 0;
+        }
+
+        textarea {
+            height: 140px;
+        }
+
+        button {
+            width: 100%;
+        }
     }
 }

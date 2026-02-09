@@ -1,15 +1,32 @@
 .app__carrousel {
-
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   max-width: 1100px;
   margin: 2rem auto;
   padding: 1rem;
   position: relative;
-
 }
 
-.head-text {
-  margin-top: 20px;
+.app__carrousel .head-text {
+  margin-top: 0;
+  text-align: left;
+}
 
+.app__carrousel-contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.app__carrousel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.app__carrousel-description {
+  max-width: 70ch;
 }
 
 .app__carrousel-swiper {
@@ -29,57 +46,22 @@
 }
 
 .app__carrousel-link {
-  display: flex;
-  flex: 1;
+  display: inline-flex;
+  width: fit-content;
   justify-content: center;
   align-items: center;
-  list-style: none;
   color: #6b7688;
   text-decoration: none;
-  flex-direction: column;
   text-transform: uppercase;
   font-weight: 500;
+  letter-spacing: 0.04em;
   transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.2rem;
 
   &:hover {
     color: #313bac;
-  }
-
-  li {
-    margin: 0 1rem;
-    cursor: pointer;
-    flex-direction: column;
-
-    div {
-      width: 5px;
-      height: 5px;
-      background: transparent;
-      border-radius: 50%;
-      margin-bottom: 5px;
-    }
-
-    a {
-      color: #6b7688;
-      text-decoration: none;
-      flex-direction: column;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: #313bac;
-      }
-    }
-
-    &:hover {
-      div {
-        background-color: #313bac;
-      }
-    }
-  }
-
-  @media screen and (max-width: 900px) {
-    display: none;
+    border-bottom-color: #313bac;
   }
 }
 
@@ -100,5 +82,28 @@
 
   .app__carrousel-Image {
     max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .app__carrousel {
+    gap: 1.25rem;
+    margin: 1.5rem auto;
+  }
+
+  .app__carrousel-Image {
+    max-height: 360px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app__carrousel {
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+
+  .app__carrousel-Image {
+    max-height: 320px;
+    border-radius: 0.75rem;
   }
 }

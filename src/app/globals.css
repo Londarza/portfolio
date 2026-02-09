@@ -775,3 +775,73 @@ body {
     padding: 2rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .cv-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .cv-image {
+    width: 96px;
+    height: 96px;
+  }
+
+  .cv-name {
+    font-size: 1.5rem;
+  }
+
+  .cv-title {
+    font-size: 1rem;
+  }
+
+  .cv-contact {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .cv-section-title {
+    font-size: 1.25rem;
+  }
+
+  .cv-section-content,
+  .cv-project-description,
+  .cv-job-list,
+  .cv-skills-list li,
+  .cv-language {
+    font-size: 0.95rem;
+  }
+
+  .cv-project-title,
+  .cv-job-title,
+  .cv-education-title {
+    font-size: 1.1rem;
+  }
+
+  .cv-project-list {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sobre-mi-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .sobre-mi-title {
+    font-size: 2rem;
+  }
+
+  .sobre-mi-subtitle {
+    font-size: 1rem;
+  }
+
+  .sobre-mi-section {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
