@@ -13,6 +13,7 @@ interface CarrouselProps {
     image: StaticImageData[];
     title: string;
     description: string;
+    link?: string;
   };
 }
 
@@ -35,6 +36,11 @@ const Carrousel: React.FC<CarrouselProps> = ({ imagesProp }) => {
         </motion.h1>
         <motion.p className="p-text" variants={textVariants}>
           {imagesProp.description}
+          {imagesProp.link && (
+            <a href={imagesProp.link} target="_blank" rel="noopener noreferrer" className="app__carrousel-link">
+              Link al Deploy
+            </a>
+          )}
         </motion.p>
       </motion.div>
 

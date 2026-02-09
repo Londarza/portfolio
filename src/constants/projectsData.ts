@@ -7,6 +7,7 @@ export const projectsData: Record<string, {
   image: StaticImageData[],
   title: string,
   description: string
+  link?: string
 }> = {
   namaste: {
     image: proyectImages.namaste,
@@ -36,8 +37,8 @@ export const projectsData: Record<string, {
   Preventigen: {
     image: proyectImages.preventigen,
     title: "Preventigen",
-    description: `Preventigen es una startup medica, que busca mejorar la experiencia de los medicos y de los pacientes con ayuda de la IA. El proyecto busca prevenir con ayuda de la IA a los pacientes a detectar tratamientos antes de que sucedan y, a su vez, reducir los errores medicos clinicos. Por el momento desarrolle la pagina de presentacion de la empresa desde cero, seleccionando colores, animaciones  y diseño para crear una página profesional y con una excelente experiencia de usuario.
-    La página se encuentra deployada en https://preventigen-front.vercel.app/`
+    description: `Preventigen es una startup medica, que busca mejorar la experiencia de los medicos y de los pacientes con ayuda de la IA. El proyecto busca prevenir con ayuda de la IA a los pacientes a detectar tratamientos antes de que sucedan y, a su vez, reducir los errores medicos clinicos. Por el momento desarrolle la pagina de presentacion de la empresa desde cero, seleccionando colores, animaciones  y diseño para crear una página profesional y con una excelente experiencia de usuario.`,
+    link: "https://preventigen-front.vercel.app/"
   },
   Swaplyar: {
     image: proyectImages.swaplyar,
